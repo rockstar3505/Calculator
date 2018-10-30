@@ -59,11 +59,26 @@ public class ProgrammerCalculator extends JFrame {
 		try {
 			int val = 0;
 			String operator = null;
-			String[] commands = mainDisplay.getText().split("//s+");
+			String[] commands = mainDisplay.getText().split("\\s+");
 			if(commands.length > 1) {
 				for(int i = 0; i < commands.length; i++) {
-					
+					if(i == 0) val = Integer.parseInt(commands[i]);
+					else {
+						boolean op = false;
+						for(String string : operators) if(commands[i].equals(string)) {
+							operator = string;
+							op = true;
+						}
+						if(!op) {
+							     if(operator.equals("+")) val += Integer.parseInt(commands[i]);
+							else if(operator.equals("-")) val -= Integer.parseInt(commands[i]);
+							else if(operator.equals("*")) val *= Integer.parseInt(commands[i]);
+							else if(operator.equals("/")) val /= Integer.parseInt(commands[i]);
+							else if(operator.equals("%")) val %= Integer.parseInt(commands[i]);
+						}
+					}
 				}
+				mainDisplay.setText(Integer.toString(val));
 			}
 		} catch(Exception e) {
 			mainDisplay.setText(e.getMessage());
