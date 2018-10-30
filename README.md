@@ -1,2 +1,2 @@
 # Calculator
-calculator
+Basic calculator interface.
