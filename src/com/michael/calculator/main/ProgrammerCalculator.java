@@ -46,7 +46,7 @@ public class ProgrammerCalculator extends JFrame {
 		calcButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				buttonPressed(calcButton);
+				calculate();
 				
 			}
 		});
@@ -55,7 +55,7 @@ public class ProgrammerCalculator extends JFrame {
 		getContentPane().add(panel);
 	}
 	
-	void buttonPressed(JButton sender) {
+	void calculate() {
 		try {
 			int val = 0;
 			String operator = null;
