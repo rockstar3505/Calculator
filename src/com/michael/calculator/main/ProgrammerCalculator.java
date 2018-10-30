@@ -56,6 +56,17 @@ public class ProgrammerCalculator extends JFrame {
 	}
 	
 	void buttonPressed(JButton sender) {
-		
+		try {
+			int val = 0;
+			String operator = null;
+			String[] commands = mainDisplay.getText().split("//s+");
+			if(commands.length > 1) {
+				for(int i = 0; i < commands.length; i++) {
+					
+				}
+			}
+		} catch(Exception e) {
+			mainDisplay.setText(e.getMessage());
+		}
 	}
 }
